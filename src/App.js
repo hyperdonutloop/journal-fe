@@ -24,7 +24,7 @@ function App() {
       <Route exact path="/signup" render={props => <SignUp {...props} />} />
       <PrivateRoute exact path="/home" component={JournalEntries} />
       <Route exact path="/post/:id" render={props => <SelectedPost {...props} />} />
-      <Route exact path="createpost" component={CreateEntry} />
+      <Route exact path="/createpost" component={CreateEntry} />
       <Route exact path="/editpost" render={props => <EditEntry {...props} />} />
 
     </div>

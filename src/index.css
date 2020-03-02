@@ -6,8 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  background-color: royalblue;
-  overflow-x: hidden;
 }
 
 code {
@@ -17,6 +15,6 @@ code {
 
 html {
   height: 100%;
-  background-color: red;
-  margin: 0 auto;
+  /* background-color: red; */
+  /* margin: 0 auto; */
 }

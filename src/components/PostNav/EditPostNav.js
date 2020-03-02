@@ -35,7 +35,7 @@ const EditPostNav = props => {
           </div>
         </div>
         <h3 onClick={handleChange}>
-          <i aria-hidden="true" className="save medium icon" title="save"></i>
+          <i aria-hidden="true" className="save large icon" title="save"></i>
         </h3>
       </div>
     )

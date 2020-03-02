@@ -1,6 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Container } from 'semantic-ui-react';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+	.post-card {
+	.date {
+		font-size: 1.8em;
+		line-height: 1em;
+		margin-bottom: 20px;
+	}
+
+	.post-title {
+		font-size: 1.2em;
+		/* font-family: $font-content; */
+	}
+}
+`;
 
 export default function PostCard ({ title, date, id }) {
   const changedate = date.split('-');
@@ -53,6 +69,7 @@ export default function PostCard ({ title, date, id }) {
   const datedisplay = `${dateword()} ${day}, ${year}`;
   
   return (
+		<Wrapper>
     <Container text>
       <div className="post-card">
         <Link to={`/post/${id}`}>
@@ -69,5 +86,6 @@ export default function PostCard ({ title, date, id }) {
         </Link>
       </div>
     </Container>
+		</Wrapper>
   )
 };

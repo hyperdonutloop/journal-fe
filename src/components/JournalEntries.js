@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth.js';
-import Loader  from 'react-loader-spinner';
+import Loader from 'react-loader-spinner';
+import styled from 'styled-components';
 
 // components 
 import PostCard from './PostCard.js';
 import PostListNav from './PostNav/PostListNav';
+
+const Wrapper = styled.div`
+  .test {
+    /* display: flex; */
+    /* height: 200px;
+    width: 200px; */
+    border: 2px dotted blue;
+  }
+`;
 
 export default function JournalEntries (props) {
   const loginId = localStorage.getItem('user_id');
@@ -23,10 +33,16 @@ export default function JournalEntries (props) {
     axiosWithAuth()
       .get(`https://journal-be.herokuapp.com/api/entries/users/${loginId}`)
       .then((response) => {
+        console.log(response);
+        
         setIsLoading(false);
         setIsEmpty(false);
         
-        const unorderedEntries = [ ...response.data.data ].sort((a, b) => a.id < b.id ? 1 : -1);
+        const unorderedEntries = [ 
+          ...response.data.data 
+        ].sort(
+          (a, b) => 
+            a.id < b.id ? 1 : -1);
         setEntries(unorderedEntries);
       })
       .catch((error) => {
@@ -38,11 +54,13 @@ export default function JournalEntries (props) {
 
   return (
     <React.Fragment>
+      {/* <Wrapper> */}
       <div className="postlist-nav-container" >
         <PostListNav props={props} />
+        <h2>TESTING</h2>
       </div>
-      <div>
-        {
+      <div classname="test">
+        { 
           isLoading ? <Loader type="Oval" color="blue" height={80} width={80} /> :
           isEmpty ? <h1>You don't have any journal entries!</h1> :
           entries.map((entry) => {
@@ -57,6 +75,8 @@ export default function JournalEntries (props) {
             );
           })}
       </div>
+      <footer style={{ height: '20px '}} />
+      {/* </Wrapper> */}
     </React.Fragment>
   )
 };

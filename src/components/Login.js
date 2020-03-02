@@ -6,7 +6,7 @@ import axios from 'axios';
 export default function Login(props) {
   // credentials store the email/password inputted by user and is sent to backend for verification
   const [ credentials, setCredentials ] = useState({
-    username: "",
+    email: "",
     password: ""
   });
   // will cause error messages to appear if true
@@ -28,6 +28,8 @@ export default function Login(props) {
         localStorage.setItem('user_id', response.data.user.id);
 
         props.history.push("/home");
+        console.log(response);
+        
       })
       .catch(error => {
         console.log(error.message)
@@ -45,12 +47,12 @@ export default function Login(props) {
       <Form onSubmit={submitHandler}>
         <Segment>
           <Form.Input 
-            fluid type="text" 
-            placeholder="username" 
+            fluid type="email" 
+            placeholder="email" 
             icon="user" 
             iconPosition="left" 
-            name="username" 
-            value={credentials.username} 
+            name="email" 
+            value={credentials.email} 
             onChange={changeHandler} 
             required 
           />
