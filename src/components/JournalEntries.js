@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth.js';
+import Loader  from 'react-loader-spinner';
+
+// components 
+import PostCard from './PostCard.js';
+import PostListNav from './PostNav/PostListNav';
 
 export default function JournalEntries (props) {
   const loginId = localStorage.getItem('user_id');
@@ -8,7 +13,7 @@ export default function JournalEntries (props) {
   const [ entries, setEntries ] = useState([]);
 
   // tracks whether the current user has journal entries or not
-  const [ isEmpty, setIsEmpty ] = useState(true)
+  const [ isEmpty, setIsEmpty ] = useState(true);
 
   // tracks status of fetching journal entries
   const [ isLoading, setIsLoading ] = useState(true);
@@ -32,10 +37,26 @@ export default function JournalEntries (props) {
   }, []);
 
   return (
-    <div>
-    
-    </div>
+    <React.Fragment>
+      <div className="postlist-nav-container" >
+        <PostListNav props={props} />
+      </div>
+      <div>
+        {
+          isLoading ? <Loader type="Oval" color="blue" height={80} width={80} /> :
+          isEmpty ? <h1>You don't have any journal entries!</h1> :
+          entries.map((entry) => {
+            return (
+              <PostCard 
+                key={entry.id}
+                id={entry.id}
+                date={entry.created_at}
+                title={entry.title}
+                text={entry.text}
+              />
+            );
+          })}
+      </div>
+    </React.Fragment>
   )
-}
-
-//finish this line 36 once other post components are done
+};

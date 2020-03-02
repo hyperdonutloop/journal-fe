@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Container } from 'semantic-ui-react';
 
 const Post = ({ post }) => {
-  const { id, title, text, created_at } = post;
+  const { title, text, created_at } = post;
 
   //formats the date
   const changeDate = created_at.split('-');
@@ -60,7 +60,7 @@ const Post = ({ post }) => {
         <Card raised fluid className="card-container">
           <Card.Content>
             <Card.Header>
-              <span className="post-title"></span>
+              <span className="post-title">{title}</span>
             </Card.Header>
             <Card.Meta>
               <span className="date">{datedDisplay}</span>
@@ -71,4 +71,6 @@ const Post = ({ post }) => {
       </div>
     </Container>
   )
-}
+};
+
+export default Post;

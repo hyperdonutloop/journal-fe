@@ -18,11 +18,11 @@ export default function SignUp(props) {
   const submitHandler = e => {
     e.preventDefault();
 
-    axios.post('/api/auth/register', userCreds)
+    axios.post('https://journal-be.herokuapp.com/api/auth/register', userCreds)
       .then(res => {
         console.log(res);
         setIncorrectCreds({ isIncorrect: false });
-        props.history.push('/');
+        props.history.push("/");
       })
       .catch(error => {
         console.log(error);

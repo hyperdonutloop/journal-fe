@@ -1,26 +1,34 @@
 import React from 'react';
 import { Route, withRouter, Redirect } from 'react-router-dom';
-
-import logo from './logo.svg';
+import PrivateRoute from './auth/privateRoute.js';
 import './App.css';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
 
 //components
+import Login from './components/Login.js';
+import SignUp from './components/SignUp.js';
+import JournalEntries from './components/JournalEntries.js';
+import SelectedPost from './components/Post/SelectedPost.js';
+import CreateEntry from './components/createEntry/createEntry.js';
+import EditEntry from './components/editEntry/editEntry.js';
 
 function App() {
   return (
     <div className="App">
       <Route 
-        exact path='/' 
+        exact path="/" 
         render={props => localStorage.getItem('token') 
-        ? <Redirect to='/home' /> 
+        ? <Redirect to="/home" /> 
         : <Login {...props} />} 
       />
 
-      <Route exact path='/signup' render={props => <SignUp {...props} />} />
+      <Route exact path="/signup" render={props => <SignUp {...props} />} />
+      <PrivateRoute exact path="/home" component={JournalEntries} />
+      <Route exact path="/post/:id" render={props => <SelectedPost {...props} />} />
+      <Route exact path="createpost" component={CreateEntry} />
+      <Route exact path="/editpost" render={props => <EditEntry {...props} />} />
+
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

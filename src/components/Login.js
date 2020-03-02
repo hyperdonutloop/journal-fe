@@ -6,7 +6,7 @@ import axios from 'axios';
 export default function Login(props) {
   // credentials store the email/password inputted by user and is sent to backend for verification
   const [ credentials, setCredentials ] = useState({
-    email: "",
+    username: "",
     password: ""
   });
   // will cause error messages to appear if true
@@ -20,14 +20,14 @@ export default function Login(props) {
   const submitHandler = e => {
     e.preventDefault();
 
-    axios.post('/api/auth/login', credentials)
+    axios.post('https://journal-be.herokuapp.com/api/auth/login', credentials)
       .then(response => {
         setIncorrectCreds({isIncorrect: false})
 
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user_id', response.data.user.id);
 
-        props.history.push('/home');
+        props.history.push("/home");
       })
       .catch(error => {
         console.log(error.message)
@@ -45,14 +45,24 @@ export default function Login(props) {
       <Form onSubmit={submitHandler}>
         <Segment>
           <Form.Input 
-            fluid type="email" 
-            placeholder="email" 
+            fluid type="text" 
+            placeholder="username" 
             icon="user" 
             iconPosition="left" 
-            name="email" 
-            value={credentials.email} 
+            name="username" 
+            value={credentials.username} 
             onChange={changeHandler} 
             required 
+          />
+          <Form.Input
+            fluid type="password"
+            placeholder="password"
+            icon="user"
+            iconPosition="left"
+            name="password"
+            value={credentials.password}
+            onChange={changeHandler}
+            required
           />
           <Form.Button fluid content="Login" size="medium" />
         </Segment>

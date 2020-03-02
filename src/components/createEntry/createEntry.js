@@ -5,7 +5,7 @@ import styled from 'styled-components';
 //components
 import CreatePostNav from '../PostNav/CreatePostNav.js';
 
-function CreateEntry () {
+function CreateEntry (props) {
   const [ entry, setEntry ] = useState({
     title: '',
     text: '',
