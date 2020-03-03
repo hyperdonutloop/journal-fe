@@ -88,6 +88,8 @@ import CreatePostNav from '../PostNav/CreatePostNav.js';
 
 
 function CreateEntry (props) {
+  
+
   const [ entry, setEntry ] = useState({
     title: '',
     text: '',

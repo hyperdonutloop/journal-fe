@@ -3,11 +3,10 @@ import { axiosWithAuth } from '../../auth/axiosWithAuth.js';
 import { Link } from 'react-router-dom';
 
 const EditPostNav = props => {
-  const handleChange = e => {
+  const saveEditHandler = e => {
     e.preventDefault();
 
-    axiosWithAuth()
-    .put(`https://journal-be.herokuapp.com/${props.entry.id}`, {
+    axiosWithAuth().put(`https://journal-be.herokuapp.com/${props.entry.id}`, {
       title: props.entry.title,
       text: props.entry.text,
       user_id: props.entry.user_id
@@ -34,7 +33,7 @@ const EditPostNav = props => {
             </Link>
           </div>
         </div>
-        <h3 onClick={handleChange}>
+        <h3 onClick={saveEditHandler} style={{cursor: "pointer"}}>
           <i aria-hidden="true" className="save large icon" title="save"></i>
         </h3>
       </div>

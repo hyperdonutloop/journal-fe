@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { axiosWithAuth } from '../../auth/axiosWithAuth.js';
 import styled from 'styled-components';
@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   .nav {
 	height: 100px;
-	background-color: pink;
+	background-color: #27292D;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -14,20 +14,20 @@ const Wrapper = styled.div`
   border: 2px solid blue;
 
 	.slogan {
-		//  width: 100%;
+		width: 100%;
 		height: 50px;
-		color: white;
+		/* color: blue; */
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		/* font-family: $font-content; */
-		font-size: 1.5em;
+		font-size: 2.5em;
 	}
 
 	.nav-bar {
 		height: 50px;
-		background-color: white;
+		background-color: #27292D;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -40,7 +40,7 @@ const Wrapper = styled.div`
 		}
 
 		h3 {
-			font-size: $font-size-edit;
+			
 			// color: teal;
 			/* color: $grey; */
 			padding: 0 20px;
@@ -51,6 +51,13 @@ const Wrapper = styled.div`
 `;
 
 const CreatePostNav = props => {
+  const [ day, setDay ] = useState('day');
+
+  React.useEffect(() => {
+    const days = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'
+    setDay(days.split(' ')[new Date().getDay()])
+  }, [])
+  
   
   const submitHandler = event => {
     event.preventDefault();
@@ -70,7 +77,7 @@ const CreatePostNav = props => {
     <Wrapper>
     <div className="nav">
       <div className="slogan">
-        <p>One Line a Day</p>
+        <p>Have a good {day}</p>
       </div>
 
       <div className="nav-bar">
