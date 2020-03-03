@@ -75,7 +75,7 @@ const CreatePostNav = props => {
 
       <div className="nav-bar">
         <div className="back-button">
-          <Link to="/home/">
+          <Link to="/home">
             <h3>
               <i className="left chevron icon" title="back" style={{ border: '2px solid purple'}} />
             </h3>

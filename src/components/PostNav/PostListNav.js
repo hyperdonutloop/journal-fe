@@ -30,6 +30,7 @@ const Wrapper = styled.div`
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		background-color: lightblue;
 
 		.logout-button {
 			/* margin-left: 10px; */
@@ -60,7 +61,7 @@ const PostListNav = ({ props }) => {
     <Wrapper>
     <div className="post-list-nav">
       <div className="slogan">
-        <p>One Line A Day</p>
+        <p>One Line A Day POST LIST NAV COMP</p>
       </div>
 
       <div className="nav-bar">

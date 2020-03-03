@@ -22,6 +22,7 @@ const EditEntry = (props) => {
     axiosWithAuth()
       .delete(`https://journal-be.herokuapp.com/api/entries/${id}`)
       .then((response) => {
+        console.log(response);
         props.history.push('/home');
       })
       .catch((error) => {

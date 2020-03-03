@@ -10,9 +10,13 @@ import PostListNav from './PostNav/PostListNav';
 const Wrapper = styled.div`
   .test {
     /* display: flex; */
-    /* height: 200px;
+    /* height: 100%;
     width: 200px; */
     border: 2px dotted blue;
+
+    p {
+      border: 2px dashed pink;
+    }
   }
 `;
 
@@ -31,7 +35,7 @@ export default function JournalEntries (props) {
   // populates page with initial journal entries from logged in user
   useEffect(() => {
     axiosWithAuth()
-      .get(`https://journal-be.herokuapp.com/api/entries/users/${loginId}`)
+      .get(`https://journal-be.herokuapp.com/api/entries/user/${loginId}`)
       .then((response) => {
         console.log(response);
         
@@ -54,16 +58,17 @@ export default function JournalEntries (props) {
 
   return (
     <React.Fragment>
-      {/* <Wrapper> */}
+      <Wrapper>
       <div className="postlist-nav-container" >
         <PostListNav props={props} />
         <h2>TESTING</h2>
       </div>
-      <div classname="test">
-        { 
-          isLoading ? <Loader type="Oval" color="blue" height={80} width={80} /> :
-          isEmpty ? <h1>You don't have any journal entries!</h1> :
-          entries.map((entry) => {
+      <div className="test">
+        <h2>Hey</h2>
+        {
+          isLoading ? <Loader type="ThreeDots" color="blue" height={80} width={80} /> :
+          isEmpty ? <p>You have no journal entries, start writing!</p> :
+          entries.map(entry => {
             return (
               <PostCard 
                 key={entry.id}
@@ -72,11 +77,12 @@ export default function JournalEntries (props) {
                 title={entry.title}
                 text={entry.text}
               />
-            );
-          })}
+            )
+          })
+        }
       </div>
       <footer style={{ height: '20px '}} />
-      {/* </Wrapper> */}
+      </Wrapper>
     </React.Fragment>
   )
 };
