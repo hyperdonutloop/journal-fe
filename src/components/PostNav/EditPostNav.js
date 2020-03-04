@@ -6,7 +6,7 @@ const EditPostNav = props => {
   const saveEditHandler = e => {
     e.preventDefault();
 
-    axiosWithAuth().put(`https://journal-be.herokuapp.com/${props.entry.id}`, {
+    axiosWithAuth().put(`https://journal-be.herokuapp.com/api/entries/${props.entry.id}`, {
       title: props.entry.title,
       text: props.entry.text,
       user_id: props.entry.user_id
