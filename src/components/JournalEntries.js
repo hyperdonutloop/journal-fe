@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth.js';
 import Loader from 'react-loader-spinner';
 import { Cookies } from '../styles/JournalEntriesStyles.js';
+import { NavLink } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 
 // components 
 import PostCard from './PostCard.js';
-import PostListNav from './PostNav/PostListNav';
+// import PostListNav from './PostNav/PostListNav';
 
 export default function JournalEntries (props) {
   const loginId = localStorage.getItem('user_id');
@@ -43,11 +45,31 @@ export default function JournalEntries (props) {
       });
   }, []);
 
+  const logout = event => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user_id');
+    props.history.push('/');
+  }
+
   return (
-    // <React.Fragment>
+    
       <Cookies>
+        <div className="container">
+            <h1>Journaling App</h1>
+          
+
+          <div className="buttons">
+            <Button color="blue" className="logout-button" onClick={logout}>
+              Logout
+            </Button>
+            <NavLink to="/createpost">
+              <Button color="blue" className="add">Add Post</Button>
+            </NavLink>
+          </div>
+    	
+
       <div className="postlist-nav-container" >
-        <PostListNav props={props} />
+        {/* <PostListNav props={props} /> */}
         <div className="post-card">
           {
             isLoading ? <Loader type="ThreeDots" color="blue" height={80} width={80} /> :
@@ -66,8 +88,8 @@ export default function JournalEntries (props) {
           }
         </div>
       </div>
+      </div>
       <footer style={{ height: '20px '}} />
       </Cookies>
-    // </React.Fragment>
   )
 };
