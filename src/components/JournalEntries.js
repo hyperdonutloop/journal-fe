@@ -1,24 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth.js';
 import Loader from 'react-loader-spinner';
-import styled from 'styled-components';
+import { Cookies } from '../styles/JournalEntriesStyles.js';
 
 // components 
 import PostCard from './PostCard.js';
 import PostListNav from './PostNav/PostListNav';
-
-const Wrapper = styled.div`
-  .test {
-    /* display: flex; */
-    /* height: 100%;
-    width: 200px; */
-    border: 2px dotted blue;
-
-    p {
-      border: 2px dashed pink;
-    }
-  }
-`;
 
 export default function JournalEntries (props) {
   const loginId = localStorage.getItem('user_id');
@@ -57,32 +44,30 @@ export default function JournalEntries (props) {
   }, []);
 
   return (
-    <React.Fragment>
-      <Wrapper>
+    // <React.Fragment>
+      <Cookies>
       <div className="postlist-nav-container" >
         <PostListNav props={props} />
-        <h2>TESTING</h2>
-      </div>
-      <div className="test">
-        <h2>Hey</h2>
-        {
-          isLoading ? <Loader type="ThreeDots" color="blue" height={80} width={80} /> :
-          isEmpty ? <p>You have no journal entries, start writing!</p> :
-          entries.map(entry => {
-            return (
-              <PostCard 
-                key={entry.id}
-                id={entry.id}
-                date={entry.created_at}
-                title={entry.title}
-                text={entry.text}
-              />
-            )
-          })
-        }
+        <div className="post-card">
+          {
+            isLoading ? <Loader type="ThreeDots" color="blue" height={80} width={80} /> :
+            isEmpty ? <p>You have no journal entries, start writing!</p> :
+            entries.map(entry => {
+              return (
+                <PostCard 
+                  key={entry.id}
+                  id={entry.id}
+                  date={entry.created_at}
+                  title={entry.title}
+                  text={entry.text}
+                />
+              )
+            })
+          }
+        </div>
       </div>
       <footer style={{ height: '20px '}} />
-      </Wrapper>
-    </React.Fragment>
+      </Cookies>
+    // </React.Fragment>
   )
 };

@@ -14,6 +14,7 @@ import EditEntry from './components/editEntry/editEntry.js';
 function App() {
   return (
     <div className="App">
+      <div className="components">
       <Route 
         exact path="/" 
         render={props => localStorage.getItem('token') 
@@ -26,7 +27,7 @@ function App() {
       <Route exact path="/post/:id" render={props => <SelectedPost {...props} />} />
       <Route exact path="/createpost" component={CreateEntry} />
       <Route exact path="/editpost" render={props => <EditEntry {...props} />} />
-
+      </div>
     </div>
   );
 }

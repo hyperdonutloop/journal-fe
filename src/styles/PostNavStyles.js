@@ -2,45 +2,39 @@ import styled from 'styled-components';
 
  export const Pizza = styled.div`
   .nav {
-	/* height: 100px; */
-	/* background-color: $nav-grey; */
-	/* width: 100%; */
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 250px;
-	border: 2px solid red;
+		/* background-color: #FFFFFF; */
+		margin-bottom: 5rem;
+		/* border: 2px dashed red; */
 
 	.slogan {
-		//  width: 100%;
-		height: 50px;
-		/* color: white; */
+		height: 3rem;
 		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		/* font-family: $font-content; */
+		flex-direction: column;
 		font-size: 1.5em;
+		background-color: #27292D;
+
+		p {
+			color: #FFFFFF;
+			padding-top: 4px;
+		}
 	}
 
 	.nav-bar {
-		/* height: 50px; */
-		/* background-color: white; */
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border: 2px solid pink;
+		justify-content: center;
+		/* border: 2px solid pink; */
 
-		.back-button {
-			/* color: $grey; */
-			font-size: 1.5em;
-			font-weight: bold;
-			margin-left: 15px;
+		i {
+			padding: 1rem;
+			margin: 0.5rem;
+			/* text-align: center; */
+			/* border: 2px solid blue; */
+			box-sizing: content-box;
 		}
 
 		h3 {
-			/* font-size: $font-size-edit; */
-			// color: teal;
-			/* color: $grey; */
+
+		
 			padding: 0 20px;
 		}
 	}

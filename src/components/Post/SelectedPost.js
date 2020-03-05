@@ -26,7 +26,7 @@ const SelectedPost = (props) => {
   return (
     <div>
       <PostNav post={post} />
-      {!post ? <Loader type="Circles" color="purple" height={50} width={50} /> :
+      {!post ? <Loader type="ThreeDots" color="purple" height={50} width={50} /> :
         <Post post={post} />
       }
     </div>

@@ -1,43 +1,6 @@
 import React from 'react';
 import { Card, Container } from 'semantic-ui-react';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  .post-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-	.card-container {
-		min-width: 99%;
-		height: 99vh;
-		height: auto;
-		font-family: $font-content;
-		line-height: 20px;
-
-		.text {
-			text-align: center;
-			font-size: 1em;
-		}
-
-		img {
-			margin-bottom: 20px;
-		}
-
-		.post-title {
-			font-family: $font-header;
-			font-size: 1.5em;
-			line-height: 50px;
-		}
-
-		div {
-			margin: 0 0 20px 0;
-		}
-	}
-}
-`;
-
+import { Wrapper } from '../../styles/PostStyles.js';
 
 const Post = ({ post }) => {
   const { title, text, created_at } = post;
