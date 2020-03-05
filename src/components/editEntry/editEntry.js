@@ -69,7 +69,7 @@ const EditEntry = (props) => {
             />
           </Form>
         {/* </div> */}
-        <Button className="button" animated onClick={saveEditHandler}>
+        <Button color="blue" className="button" animated onClick={saveEditHandler}>
           <Button.Content visible>
             Save
           </Button.Content>
@@ -77,7 +77,7 @@ const EditEntry = (props) => {
             <Icon name='save' />
           </Button.Content>
         </Button>
-        <Button className="button" animated onClick={deleteEntry}>
+        <Button color="blue" className="button" animated onClick={deleteEntry}>
           <Button.Content visible>
             Delete
           </Button.Content>

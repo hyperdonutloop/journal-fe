@@ -11,8 +11,4 @@ export const Donuts = styled.div`
   .button {
     margin: 1rem;
   }
-
-  .save {
-      border: 1px solid pink;
-    }
 `;
