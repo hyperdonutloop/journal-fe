@@ -2,41 +2,22 @@ import styled from 'styled-components';
 
  export const Pizza = styled.div`
   .nav {
-		/* background-color: #FFFFFF; */
-		margin-bottom: 5rem;
-		/* border: 2px dashed red; */
-
-	.slogan {
-		height: 3rem;
+		/* margin-bottom: 5rem; */
 		display: flex;
-		flex-direction: column;
-		font-size: 1.5em;
-		background-color: #27292D;
-
-		p {
-			color: #FFFFFF;
-			padding-top: 4px;
-		}
-	}
-
-	.nav-bar {
-		display: flex;
+		align-items: center;
 		justify-content: center;
-		/* border: 2px solid pink; */
 
-		i {
-			padding: 1rem;
-			margin: 0.5rem;
-			/* text-align: center; */
+		.chevron {
 			/* border: 2px solid blue; */
+			margin: 1rem;
 			box-sizing: content-box;
 		}
 
-		h3 {
-
-		
-			padding: 0 20px;
+		.outline {
+			/* border: 2px solid blue; */
+			box-sizing: content-box;
+			margin: 1rem;
 		}
-	}
+		
 }
 `;
