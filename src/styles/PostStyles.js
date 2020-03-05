@@ -17,17 +17,17 @@ export const Wrapper = styled.div`
     /* border: 2px solid green; */
 
 		.text {
-			/* text-align: center; */
-			font-size: 1.5em;
-		}
-
-		img {
-			margin-bottom: 20px;
+      font-size: 1.6rem;
+      text-align: justify;
+      padding: 10px;
 		}
 
 		.post-title {
-			font-size: 1.5em;
-			line-height: 50px;
+			font-size: 2em;
+      line-height: 50px;
+      /* border: 2px double blue; */
+      padding: 5px;
+      
 		}
 
 		div {

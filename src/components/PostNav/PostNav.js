@@ -8,10 +8,12 @@ const PostNav = post => {
 		<Pizza>
       <div className="nav">
         <Link to="/home">
-          <i className="chevron left large icon" title="back" />
+          {/* <i className="chevron left large icon" title="back" /> */}
+          <button className="back">Back</button>
         </Link>
         <NavLink to={{ pathname: `/editpost`, state: {post}}}>
-            <i aria-hidden="true" className="edit outline large icon" title="edit" />
+            {/* <i aria-hidden="true" className="edit outline large icon" title="edit" /> */}
+            <button className="edit">Edit</button>
         </NavLink>
       </div>
 		</Pizza>
