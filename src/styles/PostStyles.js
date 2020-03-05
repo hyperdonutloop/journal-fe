@@ -7,13 +7,14 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     /* border: 5px dotted yellow; */
-    margin-top: 1rem;
+    margin-top: 5rem;
+    /* margin-bottom: 1rem; */
 
 	.card-container {
 		min-width: 100%;
 		height: 100vh;
 		height: auto;
-    line-height: 3rem;
+    /* line-height: 1rem; */
     /* border: 2px solid green; */
 
 		.text {

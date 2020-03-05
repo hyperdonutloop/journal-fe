@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { axiosWithAuth } from '../../auth/axiosWithAuth.js';
 import { Form, TextArea, Container, Button, Icon } from 'semantic-ui-react';
 
-import EditPostNav from '../PostNav/EditPostNav.js';
+// import EditPostNav from '../PostNav/EditPostNav.js';
 import { Donuts } from '../../styles/EditEntryStyles.js';
 
 const EditEntry = (props) => {
@@ -54,28 +54,21 @@ const EditEntry = (props) => {
     <Donuts>
       {/* <EditPostNav entry={entry} routerProps={props} /> */}
       <Container text>
-        <div className="form">
+        {/* <div className="form"> */}
+          
           <Form>
+          <h2>Edit Post</h2>
             <Form.Field>
-              <label className="save" >Save</label>
               <input name="title" value={entry.title} onChange={changeHandler} />
             </Form.Field>
             <TextArea
               name="text" 
-              style={{ minHeight: 400 }} 
+              style={{ minHeight: 480 }} 
               value={entry.text} 
               onChange={changeHandler} 
             />
           </Form>
-        </div>
-        <Button className="button" animated onClick={deleteEntry}>
-          <Button.Content visible>
-            Avada Kedavra
-          </Button.Content>
-          <Button.Content hidden>
-            <Icon name='trash alternate' />
-          </Button.Content>
-        </Button>
+        {/* </div> */}
         <Button className="button" animated onClick={saveEditHandler}>
           <Button.Content visible>
             Save
@@ -84,6 +77,15 @@ const EditEntry = (props) => {
             <Icon name='save' />
           </Button.Content>
         </Button>
+        <Button className="button" animated onClick={deleteEntry}>
+          <Button.Content visible>
+            Delete
+          </Button.Content>
+          <Button.Content hidden>
+            <Icon name='trash alternate' />
+          </Button.Content>
+        </Button>
+        
       </Container>
     </Donuts>
   )

@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 
 import { Pizza }from '../../styles/PostNavStyles.js';
 
@@ -8,12 +9,10 @@ const PostNav = post => {
 		<Pizza>
       <div className="nav">
         <Link to="/home">
-          {/* <i className="chevron left large icon" title="back" /> */}
-          <button className="back">Back</button>
+          <Button color="blue" className="back">Home</Button>
         </Link>
         <NavLink to={{ pathname: `/editpost`, state: {post}}}>
-            {/* <i aria-hidden="true" className="edit outline large icon" title="edit" /> */}
-            <button className="edit">Edit</button>
+          <Button color="blue" className="edit">Edit</Button>
         </NavLink>
       </div>
 		</Pizza>

@@ -6,9 +6,13 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import './index.css';
 import App from './App';
 
+import ScrollToTop from './components/Scroll.js';
+
 ReactDOM.render(
   <BrowserRouter>
+    <ScrollToTop>
     <App />
+    </ScrollToTop>
   </BrowserRouter>,
   document.getElementById('root')
 );
