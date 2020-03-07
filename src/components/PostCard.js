@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Container } from 'semantic-ui-react';
+import { Card, Container, TableBody } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Moment from 'react-moment';
 
 import { Wrapper } from '../styles/PostCardStyles.js';
+import moment from 'moment';
 
 export default function PostCard ({ title, id }) {
 	const date = new Date();
-  
+	
+	let now = moment();
+	console.log("\nLocalized")
+	const time = moment().format('h:mm a')
+	
+	// keep working on getting time and date to work separately
   return (
 		<Wrapper>
     <Container text>
@@ -24,7 +30,7 @@ export default function PostCard ({ title, id }) {
 									<Moment format="MMMM Do, YYYY">{date}</Moment>
 								</div>
 								<div className="time">
-									<Moment format="h:mm a">{date}</Moment>
+									<div>{time}</div>
 								</div>
               </Card.Header>
               <Card.Meta>

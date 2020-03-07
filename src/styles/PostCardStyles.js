@@ -13,7 +13,8 @@ export const Wrapper = styled.div`
     }
 
 	.post-title {
-		font-size: 1.2em;
+    font-size: 1.2em;
+    margin-top: 1rem;
 		/* font-family: $font-content; */
 	}
 }

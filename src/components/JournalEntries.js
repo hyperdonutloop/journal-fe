@@ -55,39 +55,40 @@ export default function JournalEntries (props) {
     
       <Cookies>
         <div className="container">
-            <h1>Journaling App</h1>
-          
-
-          <div className="buttons">
-            <Button color="blue" className="logout-button" onClick={logout}>
+          <header className="header">
+          <Button color="blue" className="logout-button" onClick={logout}>
               Logout
             </Button>
+          
+          </header>
+            <h1>Write Something</h1>
+            
+          <div className="buttons">
+            
             <NavLink to="/createpost">
               <Button color="blue" className="add">Add Post</Button>
             </NavLink>
           </div>
-    	
-
-      <div className="postlist-nav-container" >
-        {/* <PostListNav props={props} /> */}
-        <div className="post-card">
-          {
-            isLoading ? <Loader type="ThreeDots" color="blue" height={80} width={80} /> :
-            isEmpty ? <p>You have no journal entries, start writing!</p> :
-            entries.map(entry => {
-              return (
-                <PostCard 
-                  key={entry.id}
-                  id={entry.id}
-                  date={entry.created_at}
-                  title={entry.title}
-                  text={entry.text}
-                />
-              )
-            })
-          }
-        </div>
-      </div>
+          {/* <PostListNav props={props} /> */}
+          <div className="card container">
+            <div className="post-card">
+              {
+                isLoading ? <Loader type="ThreeDots" color="#A0A4D9" height={80} width={80} /> :
+                isEmpty ? <p>You have no journal entries, start writing!</p> :
+                entries.map(entry => {
+                  return (
+                    <PostCard 
+                      key={entry.id}
+                      id={entry.id}
+                      date={entry.created_at}
+                      title={entry.title}
+                      text={entry.text}
+                    />
+                  )
+                })
+              }
+            </div>
+          </div>
       </div>
       <footer style={{ height: '20px '}} />
       </Cookies>
