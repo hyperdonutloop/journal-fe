@@ -1,20 +1,59 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Container, TableBody } from 'semantic-ui-react';
-import styled from 'styled-components';
-import Moment from 'react-moment';
+import { Card, Container } from 'semantic-ui-react';
 
 import { Wrapper } from '../styles/PostCardStyles.js';
-import moment from 'moment';
 
-export default function PostCard ({ title, id }) {
-	const date = new Date();
-	
-	let now = moment();
-	console.log("\nLocalized")
-	const time = moment().format('h:mm a')
-	
-	// keep working on getting time and date to work separately
+export default function PostCard ({ title, date, id }) {
+  const changedate = date.split('-');
+	const item3 = changedate[2];
+	const item3split = item3.split('T');
+	const month = changedate[1];
+	const day = item3split[0];
+	const year = changedate[0];
+	const dateword = () => {
+		if (month === '01') {
+			return 'January';
+		}
+		else if (month === '02') {
+			return 'February';
+		}
+		else if (month === '03') {
+			return 'March';
+		}
+		else if (month === '04') {
+			return 'April';
+		}
+		else if (month === '05') {
+			return 'May';
+		}
+		else if (month === '06') {
+			return 'June';
+		}
+		else if (month === '07') {
+			return 'July';
+		}
+		else if (month === '08') {
+			return 'August';
+		}
+		else if (month === '09') {
+			return 'September';
+		}
+		else if (month === '10') {
+			return 'October';
+		}
+		else if (month === '11') {
+			return 'November';
+		}
+		else if (month === '12') {
+			return 'December';
+		}
+		else {
+			return 'Not a Month';
+		}
+	};
+  const datedisplay = `${dateword()} ${day}, ${year}`;
+  
   return (
 		<Wrapper>
     <Container text>
@@ -23,15 +62,7 @@ export default function PostCard ({ title, id }) {
           <Card raised fluid className="card-container">
             <Card.Content>
               <Card.Header>
-								<div className="weekday">
-									<Moment format="ddd">{date}</Moment>
-								</div>
-                <div className="date">
-									<Moment format="MMMM Do, YYYY">{date}</Moment>
-								</div>
-								<div className="time">
-									<div>{time}</div>
-								</div>
+                <div className="date">{datedisplay}</div>
               </Card.Header>
               <Card.Meta>
                 <div className="post-title">{title}</div>
