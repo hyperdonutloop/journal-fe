@@ -1,16 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Container } from 'semantic-ui-react';
+import { formatPostDate } from '../utils/helper.js'
 
 import { Wrapper } from '../styles/PostCardStyles.js';
 
 export default function PostCard ({ title, date, id }) {
-  const changedate = date.split('-');
-	const item3 = changedate[2];
+	const dateparts = date.split('-');
+	// console.log(dateparts, 'this is the dateparts log');
+
+	const item3 = dateparts[2];
+	// console.log(item3, 'this is item3 log');
+	
 	const item3split = item3.split('T');
-	const month = changedate[1];
+	// console.log(item3split, 'item3 split log');
+	
+	const month = dateparts[1];
+	// console.log(month, 'MONTH LOG DOG');
+	
 	const day = item3split[0];
-	const year = changedate[0];
+	console.log(day, 'DAY LOG IS HERE');
+	
+	const year = dateparts[0];
+	// console.log(year, 'YEAR LOG HERE');
+	
 	const dateword = () => {
 		if (month === '01') {
 			return 'January';
@@ -52,7 +65,9 @@ export default function PostCard ({ title, date, id }) {
 			return 'Not a Month';
 		}
 	};
-  const datedisplay = `${dateword()} ${day}, ${year}`;
+	const datedisplay = `${dateword()} ${day}, ${year}`;
+
+	
   
   return (
 		<Wrapper>
