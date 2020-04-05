@@ -6,13 +6,13 @@ const Post = ({ post }) => {
   const { title, text, created_at } = post;
 
   //formats the date
-  const changeDate = created_at.split('-');
-  const item3 = changeDate[2];
+  const changedate = created_at.split('-');
+  const item3 = changedate[2];
   const item3split = item3.split('T');
-  const month = changeDate[1];
+  const month = changedate[1];
   const day = item3split[0];
-  const year = changeDate[0];
-  const dateWord = () => {
+  const year = changedate[0];
+  const dateword = () => {
     if (month === '01') {
       return 'January';
     } 
@@ -53,7 +53,7 @@ const Post = ({ post }) => {
       return 'Not a Month'
     }
   };
-  const datedDisplay = `${dateWord()} ${day}, ${year}`;
+  const datedDisplay = `${dateword()} ${day}, ${year}`;
 
   return (
     <Wrapper>
