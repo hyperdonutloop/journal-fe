@@ -27,6 +27,8 @@ export default function JournalEntries (props) {
       .get(`https://journal-be.herokuapp.com/api/entries/user/${loginId}`)
       .then((response) => {
         console.log(response);
+        console.log(response.data.data, 'THIS IS THE DATA');
+        
         
         setIsLoading(false);
         setIsEmpty(false);
