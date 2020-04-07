@@ -4,6 +4,8 @@ import Loader from 'react-loader-spinner';
 import { Cookies } from '../styles/JournalEntriesStyles.js';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 // components 
 import PostCard from './PostCard.js';
@@ -61,15 +63,17 @@ export default function JournalEntries (props) {
           <Button color="blue" className="logout-button" onClick={logout}>
               Logout
             </Button>
-          
-          </header>
-            <h1>Write Something</h1>
-            
-          <div className="buttons">
             
             <NavLink to="/createpost">
               <Button color="blue" className="add">Add Post</Button>
             </NavLink>
+          </header>
+          <FontAwesomeIcon className="book" icon={faBook} size={'5x'} />
+            
+            
+          <div className="buttons">
+            
+            
           </div>
           {/* <PostListNav props={props} /> */}
           <div className="card container">

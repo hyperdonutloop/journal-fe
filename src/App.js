@@ -11,6 +11,10 @@ import SelectedPost from './components/Post/SelectedPost.js';
 import CreateEntry from './components/createEntry/createEntry.js';
 import EditEntry from './components/editEntry/editEntry.js';
 
+// icons
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// library.add()
+
 function App() {
   return (
     <div className="App">

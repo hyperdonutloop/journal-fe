@@ -2,11 +2,17 @@ import styled from 'styled-components';
 
  export const Cookies = styled.div`
   .container {
-    
+
+    .book {
+      margin-top: 1rem;
+    }
+
     .header {
       display: flex;
+      /* border: 2px dashed purple; */
+      justify-content: space-between;
     }
-    /* border: 2px dashed purple; */
+    
     margin: 2rem;
   }
 

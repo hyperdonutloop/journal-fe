@@ -2,61 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { axiosWithAuth } from '../../auth/axiosWithAuth.js';
 import styled from 'styled-components';
+import { Button, ButtonContent, Icon } from 'semantic-ui-react';
 
-const Wrapper = styled.div`
-  .nav {
-	height: 100px;
-	background-color: #27292D;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-  margin-bottom: 50px;
-  border: 2px solid blue;
-
-	.slogan {
-		width: 100%;
-		height: 50px;
-		/* color: blue; */
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		/* font-family: $font-content; */
-		font-size: 2.5em;
-	}
-
-	.nav-bar {
-		height: 50px;
-		background-color: #27292D;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		.back-button {
-			/* color: $grey; */
-			font-size: 1.5em;
-			font-weight: bold;
-			margin-left: 15px;
-		}
-
-		h3 {
-			
-			// color: teal;
-			/* color: $grey; */
-			padding: 0 20px;
-		}
-	}
-}
-
-`;
+// styles
+import { Sprinkles } from '../../styles/CreatePostNavStyles.js';
 
 const CreatePostNav = props => {
-  const [ day, setDay ] = useState('day');
+  // const [ day, setDay ] = useState('day');
 
-  React.useEffect(() => {
-    const days = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'
-    setDay(days.split(' ')[new Date().getDay()])
-  }, [])
+  // React.useEffect(() => {
+  //   const days = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'
+  //   setDay(days.split(' ')[new Date().getDay()])
+  // }, [])
   
   
   const submitHandler = event => {
@@ -74,10 +31,10 @@ const CreatePostNav = props => {
   };
 
   return (
-    <Wrapper>
+    <Sprinkles>
     <div className="nav">
       <div className="slogan">
-        <p>Have a good {day}</p>
+        <p>Have a good day</p>
       </div>
 
       <div className="nav-bar">
@@ -89,12 +46,16 @@ const CreatePostNav = props => {
           </Link>
         </div>
       </div>
-      <h3 onClick={submitHandler}>
-        <i aria-hidden="true" className="save large icon" title="save"></i>
-      </h3>
-
+      <div className="save">
+        <Button color="blue" className="save" animated onClick={submitHandler}>
+          <ButtonContent visible>Save</ButtonContent>
+          <ButtonContent hidden>
+            <Icon name='save' />
+          </ButtonContent>
+        </Button>
+      </div>
     </div>
-    </Wrapper>
+    </Sprinkles>
   )
 };
 
