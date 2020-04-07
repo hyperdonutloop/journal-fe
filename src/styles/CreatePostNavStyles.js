@@ -2,9 +2,17 @@ import styled from 'styled-components';
 
 export const Sprinkles = styled.div`
   .save {
-      margin-top: 0.5rem;
+      margin-bottom: 1rem;
       /* border: 2px dotted pink; */
     }
+  .back-button {
+    /* border: 2px solid blue; */
+    padding: 1rem;
+  }
+  .left {
+    /* border: 2px solid pink; */
+    /* box-sizing: border-box; */
+  }
   .nav {
 	/* height: 100px;
 	background-color: #27292D;
@@ -28,7 +36,7 @@ export const Sprinkles = styled.div`
 
 	.nav-bar {
 		height: 50px;
-		background-color: #27292D;
+		/* background-color: #27292D; */
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

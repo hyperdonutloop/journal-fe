@@ -33,16 +33,19 @@ const CreatePostNav = props => {
   return (
     <Sprinkles>
     <div className="nav">
-      <div className="slogan">
-        <p>Have a good day</p>
-      </div>
+      {/* <div className="slogan">
+       
+      </div> */}
 
       <div className="nav-bar">
         <div className="back-button">
           <Link to="/home">
-            <h3>
+            {/* <h3>
               <i className="left chevron icon" title="back" style={{ border: '2px solid purple'}} />
-            </h3>
+            </h3> */}
+            <Button color="blue" className="left">
+              <Icon name="chevron left" />
+            </Button>
           </Link>
         </div>
       </div>

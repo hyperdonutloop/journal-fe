@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Form, TextArea, Container } from 'semantic-ui-react';
-import styled from 'styled-components';
+
 //components
 import CreatePostNav from '../PostNav/CreatePostNav.js';
+
 
 function CreateEntry (props) {
   
@@ -18,31 +19,30 @@ function CreateEntry (props) {
   };
 
   return (
-    <div>
-      {/* <Wrapper> */}
-      <CreatePostNav entry={entry} setEntry={setEntry} routerProps={props} />
-      <Container text>
-        <div>
-          <Form>
-            <Form.Field>
-              <label>Create Post</label>
-              <input 
-                name="title" 
-                value={entry.title} 
-                placeholder="Title" 
-                onChange={changeHandler} 
+    <div className="container">
+        <CreatePostNav entry={entry} setEntry={setEntry} routerProps={props} />
+        <Container text>
+          <div>
+            <Form>
+              <Form.Field>
+                {/* <label>Create Post</label> */}
+                <input 
+                  name="title" 
+                  value={entry.title} 
+                  placeholder="Title" 
+                  onChange={changeHandler}
+                  className="title"
+                />
+              </Form.Field>
+              <TextArea 
+                name="text"
+                value={entry.text}
+                placeholder="Start writing..."
+                onChange={changeHandler}
               />
-            </Form.Field>
-            <TextArea 
-              name="text"
-              value={entry.text}
-              placeholder="Start writing..."
-              onChange={changeHandler}
-            />
-          </Form>
-        </div>
-      </Container>
-      {/* </Wrapper> */}
+            </Form>
+          </div>
+        </Container>
     </div>
   );
 }

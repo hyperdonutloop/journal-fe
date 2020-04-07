@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { Message, Form, Segment } from 'semantic-ui-react';
 import axios from 'axios';
 
+//styles
+import { Pastry } from '../styles/LoginStyles.js';
+
 export default function Login(props) {
   // credentials store the email/password inputted by user and is sent to backend for verification
   const [ credentials, setCredentials ] = useState({
@@ -42,12 +45,14 @@ export default function Login(props) {
   }
 
   return (
-    <div>
+    <Pastry>
+    <div className="container">
       {incorrectCreds.isIncorrect && <Message error header="Email or password is incorrect" />}
-      <Form onSubmit={submitHandler}>
+      <Form className="form" onSubmit={submitHandler}>
         <Segment>
-          <Form.Input 
-            fluid type="email" 
+          <Form.Input
+            className="email"
+            type="email" 
             placeholder="email" 
             icon="user" 
             iconPosition="left" 
@@ -57,7 +62,7 @@ export default function Login(props) {
             required 
           />
           <Form.Input
-            fluid type="password"
+            type="password"
             placeholder="password"
             icon="user"
             iconPosition="left"
@@ -66,14 +71,14 @@ export default function Login(props) {
             onChange={changeHandler}
             required
           />
-          <Form.Button fluid content="Login" size="medium" />
+          <Form.Button color="blue" content="Login" size="medium" />
         </Segment>
       </Form>
-      <Message>
-        No account? <Link to="/signup">Sign Up</Link>
+      <Message className="message">
+        No account? {' '}<Link to="/signup" className="sign-up">Sign Up</Link>
       </Message>
-
     </div>
+    </Pastry>
   )
 
 }
