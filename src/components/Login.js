@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Message, Form, Segment } from 'semantic-ui-react';
+import { Message, Form, Segment, Image } from 'semantic-ui-react';
 import axios from 'axios';
+import journal from '../assets/journal.png'
+import logo from '../assets/logo.png';
 
 //styles
 import { Pastry } from '../styles/LoginStyles.js';
@@ -47,6 +49,20 @@ export default function Login(props) {
   return (
     <Pastry>
     <div className="container">
+      <nav className="nav">
+        <div>
+          {/* <h2>One Line A Day</h2> */}
+          <Image 
+            className="logo"
+            src={logo}
+          />
+        </div>
+        {/* <Image
+          className="journal" 
+          src={journal} 
+        /> */}
+      </nav>
+      
       {incorrectCreds.isIncorrect && <Message error header="Email or password is incorrect" />}
       <Form className="form" onSubmit={submitHandler}>
         <Segment>
@@ -74,9 +90,11 @@ export default function Login(props) {
           <Form.Button color="blue" content="Login" size="medium" />
         </Segment>
       </Form>
+      <div className="message">
       <Message className="message">
         No account? {' '}<Link to="/signup" className="sign-up">Sign Up</Link>
       </Message>
+      </div>
     </div>
     </Pastry>
   )
