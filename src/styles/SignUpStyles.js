@@ -4,7 +4,7 @@ export const Bacon = styled.div`
   .grid {
     text-align: center;
     vertical-align: middle;
-    height: 100vh;
+    height: 85vh;
   }
   .column {
     max-width: 500px;
