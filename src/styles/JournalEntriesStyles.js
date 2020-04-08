@@ -21,8 +21,14 @@ import styled from 'styled-components';
   }
 
   .card-container {
+    
     /* border: 3px solid yellow; */
   }
+
+  .post-card {
+      margin-top: 2rem;
+      /* border: 2px dotted green; */
+    }
 
   .post-card {
     /* border: 3px dashed green; */

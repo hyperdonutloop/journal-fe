@@ -67,14 +67,15 @@ export default function SignUp(props) {
                   value={userCreds.lastname}
                   required 
                 />
-                <Form.Input 
+                {/* <Form.Input 
                   type="text"
                   placeholder="Username"
                   name="username"
+                  autoComplete="new-password"
                   onChange={changeHandler}
                   value={userCreds.username}
                   required 
-                />
+                /> */}
                 <Form.Input 
                   type="email"
                   placeholder="Email"

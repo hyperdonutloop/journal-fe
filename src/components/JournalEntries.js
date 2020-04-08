@@ -4,8 +4,6 @@ import Loader from 'react-loader-spinner';
 import { Cookies } from '../styles/JournalEntriesStyles.js';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 // components 
 import PostCard from './PostCard.js';
@@ -60,7 +58,7 @@ export default function JournalEntries (props) {
       <Cookies>
         <div className="container">
           <header className="header">
-          <Button color="blue" className="logout-button" onClick={logout}>
+            <Button color="blue" className="logout-button" onClick={logout}>
               Logout
             </Button>
             
@@ -68,18 +66,10 @@ export default function JournalEntries (props) {
               <Button color="blue" className="add">Add Post</Button>
             </NavLink>
           </header>
-          <FontAwesomeIcon className="book" icon={faBook} size={'5x'} />
-            
-            
-          <div className="buttons">
-            
-            
-          </div>
-          {/* <PostListNav props={props} /> */}
           <div className="card container">
             <div className="post-card">
               {
-                isLoading ? <Loader type="ThreeDots" color="#A0A4D9" height={80} width={80} /> :
+                isLoading ? <Loader type="ThreeDots" color="#1778C2" height={80} width={80} /> :
                 isEmpty ? <p>You have no journal entries, start writing!</p> :
                 entries.map(entry => {
                   return (
