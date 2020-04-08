@@ -9,6 +9,10 @@ export const Bacon = styled.div`
   .column {
     max-width: 500px;
 
+    @media screen and (max-width: 550px) {
+      max-width: 400px;
+    }
+
     .logo {
       /* border: 2px dotted green; */
       max-width: 300px;

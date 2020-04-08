@@ -9,6 +9,10 @@ export const Pastry = styled.div`
 
   .column {
     max-width: 500px;
+
+    @media screen and (max-width: 550px) {
+      max-width: 400px;
+    }
   }
   .container {
     /* border: 2px solid blue; */
