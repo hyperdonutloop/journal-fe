@@ -5,34 +5,11 @@ export const Sprinkles = styled.div`
       margin-bottom: 1rem;
       /* border: 2px dotted pink; */
     }
+
   .back-button {
     /* border: 2px solid blue; */
     padding: 1rem;
   }
-  .left {
-    /* border: 2px solid pink; */
-    /* box-sizing: border-box; */
-  }
-  .nav {
-	/* height: 100px;
-	background-color: #27292D;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-  margin-bottom: 50px;
-  border: 2px solid blue; */
-
-	.slogan {
-		/* width: 100%;
-		height: 50px;
-		/* color: blue; */
-		/* display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center; */
-		/* font-family: $font-content; */
-		/* font-size: 2.5em; */
-	}
 
 	.nav-bar {
 		height: 50px;
@@ -47,16 +24,5 @@ export const Sprinkles = styled.div`
 			font-weight: bold;
 			margin-left: 15px;
 		}
-
-    
-
-		h3 {
-			
-			// color: teal;
-			/* color: $grey; */
-			padding: 0 20px;
-		}
 	}
-}
-
 `;

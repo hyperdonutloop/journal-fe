@@ -4,10 +4,8 @@ import { Form, TextArea, Container } from 'semantic-ui-react';
 //components
 import CreatePostNav from '../PostNav/CreatePostNav.js';
 
-
 function CreateEntry (props) {
   
-
   const [ entry, setEntry ] = useState({
     title: '',
     text: '',

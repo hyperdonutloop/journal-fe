@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Message, Form, Segment, Image, Grid, GridColumn } from 'semantic-ui-react';
 import axios from 'axios';
-import journal from '../assets/journal.png'
+
 import logo from '../assets/logo.png';
 
 //styles

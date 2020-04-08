@@ -20,16 +20,6 @@ export const Pastry = styled.div`
         
       }
 
-    .form {
-      /* margin-top: 5rem; */
-      /* border: 2px solid pink; */
-      
-      /* min-width: 0; */
-      /* display: flex;
-      
-      justify-content: center; */
-    }
-
     .message {
       margin-top: 1rem;
       /* display: flex;

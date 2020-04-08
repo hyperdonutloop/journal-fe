@@ -43,12 +43,11 @@ export default function SignUp(props) {
     <Bacon>
       <Grid className="grid" textAlign="center" verticalAlign="middle">
         <GridColumn className="column">
-          
           <div className="container">
-          <Image
-            className="logo" 
-            src={logo}
-          />
+            <Image
+              className="logo" 
+              src={logo}
+            />
             {incorrectCreds.isIncorrect && <Message error header="Please provide proper account details" />}
             <Form className="form" onSubmit={submitHandler}>
               <Segment>

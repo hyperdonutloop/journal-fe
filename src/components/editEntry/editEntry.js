@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { axiosWithAuth } from '../../auth/axiosWithAuth.js';
 import { Form, TextArea, Container, Button, Icon } from 'semantic-ui-react';
 
-// import EditPostNav from '../PostNav/EditPostNav.js';
 import { Donuts } from '../../styles/EditEntryStyles.js';
 
 const EditEntry = (props) => {

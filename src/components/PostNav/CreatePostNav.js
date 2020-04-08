@@ -8,13 +8,6 @@ import { Button, ButtonContent, Icon } from 'semantic-ui-react';
 import { Sprinkles } from '../../styles/CreatePostNavStyles.js';
 
 const CreatePostNav = props => {
-  // const [ day, setDay ] = useState('day');
-
-  // React.useEffect(() => {
-  //   const days = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'
-  //   setDay(days.split(' ')[new Date().getDay()])
-  // }, [])
-  
   
   const submitHandler = event => {
     event.preventDefault();
@@ -33,16 +26,9 @@ const CreatePostNav = props => {
   return (
     <Sprinkles>
     <div className="nav">
-      {/* <div className="slogan">
-       
-      </div> */}
-
       <div className="nav-bar">
         <div className="back-button">
           <Link to="/home">
-            {/* <h3>
-              <i className="left chevron icon" title="back" style={{ border: '2px solid purple'}} />
-            </h3> */}
             <Button color="blue" className="left">
               <Icon name="chevron left" />
             </Button>
